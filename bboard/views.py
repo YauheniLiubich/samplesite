@@ -5,7 +5,7 @@ from .models import Bb
 
 
 def index(request):
-    template = loader.get_template('bboarb/index.html')
+    template = loader.get_template('bboard/index.html')
     bbs = Bb.objects.order_by('-published')
     context = {'bbs': bbs}
-    return HttpResponse(template.render(context,request))
+    return HttpResponse(template.render(context, request))
